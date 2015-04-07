@@ -1,5 +1,23 @@
-##Pseudo elevator moving in two directions for an apartment 
-##building with 7 floors
+#!/usr/bin/ruby
+
+##Pseudo elevator moving in two directions for an apartment building with 7 floors
+
+class Elevator
+
+	def initialize(call, move)
+		@call=call
+		@move=move
+	end
+
+	attr_reader :call, :move
+
+end
+
+elevator=Elevator.new("Called", "Moving")
+
+puts "Lift called: #{elevator.call}"
+puts "Lift moving: #{elevator.move}"
+
 
 
 #Does lift exist?
