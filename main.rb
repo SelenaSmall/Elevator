@@ -1,25 +1,6 @@
 #!/usr/bin/ruby
 
 ##Pseudo elevator moving in two directions for an apartment building with 7 floors
-
-=begin 
-class Elevator
-
-	def initialize(call, move)
-		@call=call
-		@move=move
-	end
-
-	attr_reader :call, :move
-
-end
-
-elevator=Elevator.new("Called", "Moving")
-
-puts "Lift called: #{elevator.call}"
-puts "Lift moving: #{elevator.move}"
-=end
-
 #The elevator doesn't call the elevator, the floor within a building calls the elevator
 
 class Floor		#has ability to call lift going up or lift going down
@@ -34,10 +15,18 @@ class Floor		#has ability to call lift going up or lift going down
 	attr_reader :floor_number
 
 	def call_lift_going_up
+		puts "Press 1 to call the lift\n"
+		number = gets.chomp.to_i
+
+		if number.to_i == 1
+			puts "You have called the lift going up"
+		else puts "FAIL"
+		end
 		#TODO: all floors can call lift going up (except the top floor)
 	end
 
 	def call_lift_going_down
+		#TODO: #2 on user keyboard calls lift going down
 		#TODO: all floors can call lift going down (except the bottom floor)
 	end
 end
@@ -74,7 +63,15 @@ floor3=Floor.new(3)
 
 elevator=Elevator.new(1)
 
-puts "Elevators current location is on floor: #{floor1.floor_number}"
+#puts "Elevators current location is on floor: #{floor1.floor_number}"
+floor1.call_lift_going_up
+
+
+
+
+
+
+
 
 
 #Does lift exist?
