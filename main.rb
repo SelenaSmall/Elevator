@@ -51,15 +51,50 @@ end
 
 class Elevator		##has ability to move up; move down; stop and open
 	
-	def initialize(current_location)
-		@current_location=current_location
+	def initialize(number_of_levels)
+		@number_of_levels=number_of_levels
+	end
+
+	def levels
+		@number_of_levels
+	end
+
+	def number_of_levels
+		@level.to_i
+		puts "There are #{levels} levels"
+	end
+
+	def id_which_level
+		puts "Which level are you on?"
+		number = gets.chomp.to_i
+	end
+
+	def youre_on_level
+		@id_which_level.to_i
+#TODO: id that the level exists in this program
+		#if number.to_i == (more than 0 or less than @number_of_levels) 		
+		puts "You're on level #{id_which_level}"
+		#else puts "Failed"
+		#end
 	end
 
 	def move_up
+#TODO: optimize move with 3 case statements
+		puts "Press 1 to move lift up\n"
+		answer = gets.chomp.to_s
+			if answer == 1
+				puts "Lift moving up\n"
+			else end
 	end
-
+	
 	def move_down
+		puts "Press 2 to move lift down\n"
+		answer = gets.chomp.to_s
+			if answer == 2
+				puts "Lift moving up\n"
+			else end
 	end
+	
 
 	def stop_and_open
 	end
@@ -79,12 +114,16 @@ floor1=Floor.new(1)
 floor2=Floor.new(2)
 floor3=Floor.new(3)
 
-elevator=Elevator.new(1)
+elevator=Elevator.new(3)
 
 #puts "Elevators current location is on floor: #{floor1.floor_number}"
-puts "Number of floors: #{floor1.total_number_of_floors}"
-puts "Your are on floor x"
-floor1.call_lift_going_up
+#puts "Number of floors: #{floor1.total_number_of_floors}"
+#puts "Your are on floor x"
+#floor1.call_lift_going_up
+
+elevator.number_of_levels
+elevator.youre_on_level
+elevator.move_up
 
 
 
