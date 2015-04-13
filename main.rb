@@ -16,20 +16,56 @@ class Elevator		##has ability to move up; move down; stop and open
 		puts "There are #{levels} levels\n\n"
 	end
 
-
 	def id_which_level
-#TODO: optimize. this could definitely be more efficient/effective
 		puts "Which level are you on?"
 		current_floor = gets.chomp.to_i
 	end
 
 	def current_floor
 	floor = id_which_level
+#TODO if id_which_level is <1 or >7 puts "That level doesn't exist"
+#else return id_which_level
 	end
 
-#		puts "You're on level #{}\n"
-#	end
-#	end
+	def select_new_level
+		puts "Select the floor you would like to go to\n"
+		desired_floor = gets.chomp.to_i
+	end
+
+	def desired_floor
+		new_level = select_new_level
+#TODO if select_which_level is <1 or >7 puts "That level doesn't exist"
+#else return select_which_level
+	end
+
+	def compare_levels
+		puts "Comparing Levels"
+	a = current_floor.to_i
+	b = desired_floor.to_i
+
+		if a == b
+			puts "You're already on that floor!"
+		else return puts "Moving to new floor"
+		end
+	end
+
+	def open_lift
+#TODO if lift moves to new floor successful, puts "Lift Opening"
+	end
+
+end
+
+elevator=Elevator.new(7)
+
+puts "Welcome to the Lift!\n"
+elevator.number_of_levels
+#elevator.id_which_level
+#elevator.current_floor
+#elevator.select_new_level
+#elevator.desired_floor
+elevator.compare_levels
+
+
 
 #	def 
 #		case current_floor
@@ -54,15 +90,6 @@ class Elevator		##has ability to move up; move down; stop and open
 #		end
 #	end
 
-	def select_new_level
-		puts "Select the floor you would like to go to\n"
-		desired_floor = gets.chomp.to_i
-	end
-
-	def desired_floor
-#		puts "Moving to level #{select_new_level}\n"
-	new_level = select_new_level
-	end
 #		case desired_floor
 #		when 1
 #			puts "Lift has arrived at Ground Floor, Lift opening\n"		
@@ -84,41 +111,4 @@ class Elevator		##has ability to move up; move down; stop and open
 #		return desired_floor
 #		end
 # 		end
-
-	def compare_levels
-		puts "Comparing Levels"
-	a = current_floor.to_i
-	b = desired_floor.to_i
-
-		if a == b
-			puts "You're already on that floor!"
-		else return puts "Moving to new floor"
-		end
-	end
-
-#	def move_lift
-#		puts "Press 1 to move lift up, Press 2 to move lift down\n"
-#		answer = gets.chomp.to_i
-			
-#			if answer == 1
-#				puts "Lift moving up\n"
-#			else if answer == 2
-#				puts "Lift moving down\n"
-#			else puts "Lift not moving\n"
-#			end
-#			end
-#	end
-
-end
-
-elevator=Elevator.new(7)
-
-puts "Welcome to the Lift!\n"
-elevator.number_of_levels
-#elevator.id_which_level
-#elevator.current_floor
-#elevator.select_new_level
-elevator.compare_levels
-#elevator.desired_floor
-#elevator.move_lift
 
