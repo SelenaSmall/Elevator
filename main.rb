@@ -18,39 +18,34 @@ class Elevator		##has ability to move up; move down; stop and open
 	end
 
 	def id_which_level
-#TODO: optimize with cases & this could definitely be more efficient/effective
+#TODO: optimize. this could definitely be more efficient/effective
 		puts "Which level are you on?"
 		number = gets.chomp.to_i
 
-		if number == 1 
-			puts "Ground Floor\n\n" else 
+		case
+		when number == 1
+			puts "Ground Floor\n\n" 
 
-		if number == 2
-			puts "Level 2\n\n" else
+		when number == 2
+			puts "You're on Level 2\n\n" 
 
-		if number == 3
-			puts "Level 3\n\n" else
+		when number == 3
+			puts "You're on Level 3\n\n" 
 
-		if number == 4
-			puts "Level 4\n\n" else
+		when number == 4
+			puts "You're on Level 4\n\n" 
 
-		if number == 5
-			puts "Level 5\n\n" else
+		when number == 5
+			puts "You're on Level 5\n\n" 
 
-		if number == 6
-			puts "Level 6\n\n" else		
+		when number == 6
+			puts "You're on Level 6\n\n" 
 
-		if number == 7
-			puts "Top Floor\n\n" else
+		when number == 7
+			puts "Top Floor\n\n" 
 
-			puts "That level doesn't exist\n\n"
+		else	puts "That level doesn't exist\n\n"
 			end
-		end
-		end
-		end
-		end
-		end
-		end
 	end
 
 #def youre_on_level
