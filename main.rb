@@ -31,14 +31,14 @@ class Elevator		##has ability to move up; move down; stop and open
 		a = current_floor.to_i
 
 		case
-		when a >= 7 
-			puts "That level doesn't exist."
+		when a > 7 
+			puts "That level doesn't exist.\n"
 
-		when a <= 1
-			puts "That level doesn't exist."
+		when a < 1
+			puts "That level doesn't exist.\n"
 
-		else puts "You are on an existing level"
-			return
+		else puts "You are on an existing level.\n\n"
+			return a
 		end 
 		end
 	end
@@ -48,25 +48,24 @@ class Elevator		##has ability to move up; move down; stop and open
 		b = desired_floor.to_i
 
 		case
-		when b >= 7
-			puts "That level doesn't exist."
+		when b > 7
+			puts "That level doesn't exist.\n"
 
-		when b <= 1
-			puts "That level doesn't exist."
+		when b < 1
+			puts "That level doesn't exist.\n"
 
-		else return
+		else return b
 		end 
 		end
 	end
 
-#TODO debug compare_levels now that tests are working.
 	def compare_levels
-	a = current_floor.to_i
-	b = desired_floor.to_i
+	a = test_current_floor.to_i
+	b = test_desired_floor.to_i
 
 		if a == b
-			puts "You're already on that floor!"
-		else return puts "Moving to new floor"
+			puts "You're already on that floor!\n"
+		else return puts "Moving to new floor.\n"
 		end
 	end
 
@@ -80,6 +79,5 @@ elevator.number_of_levels
 #elevator.desired_floor
 #elevator.test_current_floor
 #elevator.test_desired_floor
-
 elevator.compare_levels
 
