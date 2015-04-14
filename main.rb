@@ -22,9 +22,7 @@ class Elevator		##has ability to move up; move down; stop and open
 	end
 
 	def current_floor
-	floor = id_which_level
-#TODO if id_which_level is <1 or >7 puts "That level doesn't exist"
-#else return id_which_level
+		floor = id_which_level
 	end
 
 	def select_new_level
@@ -34,12 +32,47 @@ class Elevator		##has ability to move up; move down; stop and open
 
 	def desired_floor
 		new_level = select_new_level
-#TODO if select_which_level is <1 or >7 puts "That level doesn't exist"
-#else return select_which_level
+	end
+
+	def test_current_floor
+		a = current_floor.to_i
+
+#TODO these loops need to continue looping until answer is valid
+#currently they only loop twice
+		case
+		when a >= 7
+			puts "That level doesn't exist."
+			return current_floor.to_i
+
+		when a <= 1
+			puts "That level doesn't exist."
+			return current_floor.to_i
+
+		else puts "You are on an existing level"
+			return
+		end 
+	end
+
+	def test_desired_floor
+		b = desired_floor.to_i
+
+		case
+#TODO these loops need to continue looping until answer is valid
+#currently they only loop twice
+		when b >= 7
+			puts "That level doesn't exist."
+			return desired_floor.to_i
+
+		when b <= 1
+			puts "That level doesn't exist."
+			return desired_floor.to_i
+
+		else puts "Moving to an existing level."
+			return
+		end 
 	end
 
 	def compare_levels
-		puts "Comparing Levels"
 	a = current_floor.to_i
 	b = desired_floor.to_i
 
@@ -47,10 +80,6 @@ class Elevator		##has ability to move up; move down; stop and open
 			puts "You're already on that floor!"
 		else return puts "Moving to new floor"
 		end
-	end
-
-	def open_lift
-#TODO if lift moves to new floor successful, puts "Lift Opening"
 	end
 
 end
@@ -63,7 +92,10 @@ elevator.number_of_levels
 #elevator.current_floor
 #elevator.select_new_level
 #elevator.desired_floor
-elevator.compare_levels
+
+elevator.test_current_floor
+#elevator.test_desired_floor
+#elevator.compare_levels
 
 
 
