@@ -3,7 +3,8 @@
 ##Elevator In an apartment building with 7 floors
 
 class Elevator		##has ability to move up; move down; stop and open
-	
+
+#TODO instance variable in place of "7"	throughout the code
 	def initialize(number_of_levels)
 		@number_of_levels=number_of_levels
 	end
@@ -31,7 +32,7 @@ class Elevator		##has ability to move up; move down; stop and open
 		a = current_floor.to_i
 
 		case
-		when a > 7 
+		when a > @number_of_levels 
 			puts "That level doesn't exist.\n"
 
 		when a < 1
@@ -48,7 +49,7 @@ class Elevator		##has ability to move up; move down; stop and open
 		b = desired_floor.to_i
 
 		case
-		when b > 7
+		when b > @number_of_levels
 			puts "That level doesn't exist.\n"
 
 		when b < 1
