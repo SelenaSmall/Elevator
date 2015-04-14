@@ -35,41 +35,37 @@ class Elevator		##has ability to move up; move down; stop and open
 	end
 
 	def test_current_floor
+		loop do
 		a = current_floor.to_i
 
-#TODO these loops need to continue looping until answer is valid
-#currently they only loop twice
 		case
-		when a >= 7
+		when a >= 7 
 			puts "That level doesn't exist."
-			return current_floor.to_i
 
 		when a <= 1
 			puts "That level doesn't exist."
-			return current_floor.to_i
 
 		else puts "You are on an existing level"
 			return
 		end 
+		end
 	end
 
 	def test_desired_floor
+		loop do
 		b = desired_floor.to_i
 
 		case
-#TODO these loops need to continue looping until answer is valid
-#currently they only loop twice
 		when b >= 7
 			puts "That level doesn't exist."
-			return desired_floor.to_i
 
 		when b <= 1
 			puts "That level doesn't exist."
-			return desired_floor.to_i
 
 		else puts "Moving to an existing level."
 			return
 		end 
+		end
 	end
 
 	def compare_levels
@@ -94,7 +90,7 @@ elevator.number_of_levels
 #elevator.desired_floor
 
 elevator.test_current_floor
-#elevator.test_desired_floor
+elevator.test_desired_floor
 #elevator.compare_levels
 
 
