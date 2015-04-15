@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 require './elevator'
-#require './floors'
+#require './floor'
 #require './building'
 
 #Run an elevator efficiently in an apartment building with 4 floors

@@ -1,4 +1,8 @@
+class Building
 
+
+
+end
 ##This class will co-ordinate all floors and elevator to move efficiently
 
 #	def move_lift
