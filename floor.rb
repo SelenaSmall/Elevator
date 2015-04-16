@@ -26,9 +26,9 @@ class Floor		#has ability to call lift going up or lift going down
 
 #		case number
 #		when 1
-#			call_lift_going_up.to_i
+#			puts "You have called the lift going up\n"
 #		when 2
-#			call_lift_going_down.to_i
+#			puts "You have called the lift going down\n"
 #		else puts "That's not an option\n" 
 #		end
 #	end
@@ -42,14 +42,21 @@ class Floor		#has ability to call lift going up or lift going down
 		end
 	end
 
-	def test_if_top_floor
+	def test_if_top_or_ground_floor
+#TODO optimise test floors into 1 test
 		a = @floor_number
 		b = @@no_of_floors
+		c = 1
 		
-		if a == b
+		case
+		when a == b
 		puts "Cannot go up, already on top floor\n"
 
+		when a == c
+		puts "Cannot go down, already on ground floor\n"
+
 		else puts "Do you want to go up or down?\n"
+			return a
 		end 
 	end 
 
@@ -71,10 +78,6 @@ class Floor		#has ability to call lift going up or lift going down
 
 		else puts "Do you want to go up or down?\n"
 		end 
-		#TODO: (ground floor cannot go down)
-#		if floor1.call_lift_going_down  
-#			puts "Cannot go down, already on ground floor\n"
-#		end
 	end	
 end
 
@@ -87,4 +90,4 @@ puts "Number of floors: #{floor1.total_number_of_floors}\n\n"
 puts "You are on floor: #{floor3.floor_number}"
 #floor1.call_lift_going_up
 #floor1.call_lift_going_down
-floor3.test_if_ground_floor
+floor2.test_if_top_or_ground_floor
