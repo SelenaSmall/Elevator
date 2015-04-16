@@ -20,24 +20,62 @@ class Floor		#has ability to call lift going up or lift going down
 		@@no_of_floors
 	end
 
-	def which_floor_is_calling_the_lift
-#TODO: determine which floor is calling the lift
+#	def call_lift
+#		puts "Press 1 to call lift going up, 2 to call lift going down\n"
+#		number = gets.chomp.to_i
+
+#		case number
+#		when 1
+#			call_lift_going_up.to_i
+#		when 2
+#			call_lift_going_down.to_i
+#		else puts "That's not an option\n" 
+#		end
+#	end
+
+	def call_lift_going_up
+		puts "Press 1 to call lift going up, 2 to call lift going down\n"
+		number = gets.chomp.to_i
+		
+		if number == 1
+		puts "You have called the lift going up\n"
+		end
 	end
 
-	def call_lift
+	def test_if_top_floor
+		a = @floor_number
+		b = @@no_of_floors
+		
+		if a == b
+		puts "Cannot go up, already on top floor\n"
+
+		else puts "Do you want to go up or down?\n"
+		end 
+	end 
+
+	def call_lift_going_down
 		puts "Press 1 to call lift going up, 2 to call lift going down\n"
 		number = gets.chomp.to_i
 
-		case number
-		when 1
-			puts "You have called the lift going up\n"
-		when 2
-			puts "You have called the lift going down\n"
-		else puts "That's not an option\n" 
+		if number == 2
+		puts "You have called the lift going down\n"
 		end
-#TODO: all floors can call lift going up (except the top floor)
-#TODO: all floors can call lift going down (except the bottom floor)
 	end
+
+	def test_if_ground_floor
+		a = @floor_number
+		b = 1
+		
+		if a == b
+		puts "Cannot go down, already on ground floor\n"
+
+		else puts "Do you want to go up or down?\n"
+		end 
+		#TODO: (ground floor cannot go down)
+#		if floor1.call_lift_going_down  
+#			puts "Cannot go down, already on ground floor\n"
+#		end
+	end	
 end
 
 floor1=Floor.new(1)
@@ -47,4 +85,6 @@ floor4=Floor.new(4)
 
 puts "Number of floors: #{floor1.total_number_of_floors}\n\n"
 puts "You are on floor: #{floor3.floor_number}"
-floor1.call_lift
+#floor1.call_lift_going_up
+#floor1.call_lift_going_down
+floor3.test_if_ground_floor
