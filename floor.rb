@@ -20,65 +20,74 @@ class Floor		#has ability to call lift going up or lift going down
 		@@no_of_floors
 	end
 
-#	def call_lift
-#		puts "Press 1 to call lift going up, 2 to call lift going down\n"
-#		number = gets.chomp.to_i
-
-#		case number
-#		when 1
-#			puts "You have called the lift going up\n"
-#		when 2
-#			puts "You have called the lift going down\n"
-#		else puts "That's not an option\n" 
-#		end
-#	end
-
-	def call_lift_going_up
-		puts "Press 1 to call lift going up, 2 to call lift going down\n"
-		number = gets.chomp.to_i
-		
-		if number == 1
-		puts "You have called the lift going up\n"
-		end
+	def your_floor
+		puts "You're on floor #{@floor_number}"
 	end
+	
+	def test_which_floor
+		your_floor
 
-	def test_if_top_or_ground_floor
-#TODO optimise test floors into 1 test
 		a = @floor_number
 		b = @@no_of_floors
 		c = 1
 		
 		case
-		when a == b
-		puts "Cannot go up, already on top floor\n"
-
 		when a == c
 		puts "Cannot go down, already on ground floor\n"
+		puts "Press 1 to call lift going up\n"
+			call_lift_going_up
 
-		else puts "Do you want to go up or down?\n"
+		when a == b
+		puts "Cannot go up, already on top floor\n"
+		puts "Press 2 to call lift going down\n"
+			call_lift_going_down
+
+		else 
+		puts "Do you want to go up or down?\n"
+		puts "Press 1 to call lift going up, 2 to call lift going down\n"
+			call_lift_up_or_down
 			return a
 		end 
 	end 
 
-	def call_lift_going_down
-		puts "Press 1 to call lift going up, 2 to call lift going down\n"
+#TODO: How can i optimise call_lift without calling it twice..
+	def call_lift
 		number = gets.chomp.to_i
+	end
 
-		if number == 2
-		puts "You have called the lift going down\n"
+	def call_lift_up_or_down
+		a = call_lift
+
+		case a
+		when 1
+			puts "You have called the lift going up\n"
+		when 2
+			puts "You have called the lift going down\n"
+
+		else puts "That's not an option\n" 
+		return end
+	end
+
+	def call_lift_going_up
+		a = call_lift
+
+		if a == 1
+		puts "You have called the lift going up\n"
+		else puts "That's not an option\n"
+			return
 		end
 	end
 
-	def test_if_ground_floor
-		a = @floor_number
-		b = 1
-		
-		if a == b
-		puts "Cannot go down, already on ground floor\n"
+	def call_lift_going_down
+		a = call_lift
 
-		else puts "Do you want to go up or down?\n"
-		end 
-	end	
+		if a == 2
+		puts "You have called the lift going down\n"
+		else puts "That's not an option\n" 
+			return 
+		end
+	end
+
 end
 
 floor1=Floor.new(1)
@@ -87,7 +96,7 @@ floor3=Floor.new(3)
 floor4=Floor.new(4)
 
 puts "Number of floors: #{floor1.total_number_of_floors}\n\n"
-puts "You are on floor: #{floor3.floor_number}"
-#floor1.call_lift_going_up
-#floor1.call_lift_going_down
-floor2.test_if_top_or_ground_floor
+#floor2.call_lift_going_up
+#floor2.call_lift_going_down
+#floor2.your_floor
+floor2.test_which_floor
