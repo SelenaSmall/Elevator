@@ -61,7 +61,8 @@ class Elevator		##has ability to move up; move down; stop and open
 
 		if a == b
 			puts "You're already on that floor!\n"
-		else return puts "Moving to new floor.\n"
+		else puts "Moving to new floor.\n"
+			return b
 		end
 	end
 
