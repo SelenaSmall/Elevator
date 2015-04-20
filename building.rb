@@ -1,3 +1,7 @@
+#!/usr/bin/ruby
+
+#require './floor'
+
 class Building
 ##This class will co-ordinate all floors and elevator to move efficiently	
 #Start with a small building, large building might need timers
@@ -5,10 +9,23 @@ class Building
 
 	def lift_ascend
 #TODO: lift move up stopping at all levels on the way which are also going up
-#Iterate numbers 1-4 testing whether "floor" says they all want to go in the same diredction
+	puts "1 = go up, 2 = go down, 3 = don't move\n" #@floor.test_which_floor
+	num = gets.chomp.to_i
+		if num == 1
+			lift_has_arrived	
+			
+			puts "which floor do you want to go to?\n" #@elevator.compare_levels
+			num2 = gets.chomp.to_i
+			if num2 >= 3 #larger than current floor but <= @total_number_of_floors
+				puts "going up"
+			else puts "you will have to wait"
+				
+			end
+	end
+#TODO: Iterate array of numbers stored in "floor.store_floor_number" says they all want to go in the same diredction
 #If yes, stop lift and open door
 #If no, bypass to next number
-
+	
 #Call "Elevator" to ask which floor they want to go to 
 #Test if that floor number is higher or lower than current level
 #If higher, move it into the sequence
@@ -36,11 +53,17 @@ class Building
 			end
 	end
 
-end
+	def lift_has_arrived
+		puts "Stop Lift, Open the Door"
+	end
 
+end
+#Later, we can store the floors wanting to move in an array which continually
+#loops to update the order in which the lift will stop at to collect/drop off 
+#passengers making it as efficient as possible with an integrated timer.
 building=Building.new
 
-building.move_lift
+building.lift_ascend
 
 #Does lift exist?
 #Where is lift currently?

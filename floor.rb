@@ -74,7 +74,7 @@ class Floor		#has ability to call lift going up or lift going down
 		if a == 1
 		puts "You have called the lift going up\n"
 		else puts "That's not an option\n"
-			return
+			return a
 		end
 	end
 
