@@ -4,6 +4,8 @@ class Elevator		##has ability to move up; move down; stop and open
 
 	def initialize(number_of_levels)
 		@number_of_levels=number_of_levels
+		@des_floors_up=[]
+		@des_floors_down=[]
 	end
 
 	def levels
@@ -66,11 +68,17 @@ class Elevator		##has ability to move up; move down; stop and open
 			puts "You're already on that floor!\n"
 		when a < b
 			puts "Added to queue\n"
-			#TODO store i in an array to be ordered later
+			@des_floors_up << b
 		else puts "Wait!"
+			#@des_floors_down << b
 			return b
 		end
 	end
+
+	def test_des_floors_up
+		puts "Floors in the queue are: #{@des_floors_up}\n"
+	end
+
 
 end
 
@@ -78,4 +86,6 @@ elevator=Elevator.new(4)
 
 #elevator.iterate_desired_floors
 elevator.compare_levels
+elevator.compare_levels
+elevator.test_des_floors_up
 #elevator.test_desired_floor
