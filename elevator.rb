@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 class Elevator		##has ability to move up; move down; stop and open
 
 	def initialize(number_of_levels)
@@ -59,11 +61,21 @@ class Elevator		##has ability to move up; move down; stop and open
 	a = test_current_floor.to_i
 	b = test_desired_floor.to_i
 
-		if a == b
+		case
+		when a == b
 			puts "You're already on that floor!\n"
-		else puts "Moving to new floor.\n"
+		when a < b
+			puts "Added to queue\n"
+			#TODO store i in an array to be ordered later
+		else puts "Wait!"
 			return b
 		end
 	end
 
 end
+
+elevator=Elevator.new(4)
+
+#elevator.iterate_desired_floors
+elevator.compare_levels
+#elevator.test_desired_floor

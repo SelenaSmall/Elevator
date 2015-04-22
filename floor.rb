@@ -99,4 +99,4 @@ puts "Number of floors: #{floor1.total_number_of_floors}\n\n"
 #floor2.call_lift_going_up
 #floor2.call_lift_going_down
 #floor2.your_floor
-floor2.test_which_floor
+floor1.test_which_floor
